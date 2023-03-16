@@ -1,0 +1,33 @@
+﻿img {
+    width: 300px;
+    height: 370px;
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+
+#cardBooks {
+    width: 20rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px
+}
+
+#cardInfoBook {
+    width: 1500rem;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px
+}
+#btnCart {
+    float: right;
+    float: right;
+}
+
+#offCanvaHeader {
+    background-color: #212529;
+}
+
+#offcanvasExampleLabel {
+    color: white
+}
