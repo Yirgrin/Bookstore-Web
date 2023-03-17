@@ -1,8 +1,7 @@
 
 CREATE PROCEDURE GetSearchedBook
-
-	@Title varchar,
-	@ISBN varchar
+	
+	@search varchar(MAX)
 AS
 BEGIN
 	
@@ -16,7 +15,11 @@ BEGIN
 		Photo,
 		Price
 	FROM Books
-	WHERE Title = @Title OR ISBN = @ISBN
+	HERE Title LIKE '%' + @search + '%'
+	OR ISBN  LIKE '%' + @search + '%'
+	OR Author LIKE '%' + @search + '%'
 
 END
 GO
+
+
