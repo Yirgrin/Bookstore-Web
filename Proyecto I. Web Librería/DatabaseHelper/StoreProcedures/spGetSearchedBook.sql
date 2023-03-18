@@ -15,7 +15,7 @@ BEGIN
 		Photo,
 		Price
 	FROM Books
-	HERE Title LIKE '%' + @search + '%'
+	WHERE Title LIKE '%' + @search + '%'
 	OR ISBN  LIKE '%' + @search + '%'
 	OR Author LIKE '%' + @search + '%'
 

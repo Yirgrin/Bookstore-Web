@@ -56,7 +56,7 @@
                 <div class="card-body">
                     <h5 class="card-text">₡ <%#Eval ("Price")%> </h5>
                     <hr>
-                    <a href="InfoBook.aspx?Id=<%# Eval("Id")%>" class="btn btn-outline-secondary">Ver más!</a>
+                    <a href="InfoBook.aspx?Id=<%#Eval("Id")%>" class="btn btn-outline-secondary">Ver más!</a>
                     <a href="#?Id=<%# Eval("Id")%>" id="btnCart"class="btn btn-warning">Añadir a la bolsa</a>
                     </div>
                 </div>

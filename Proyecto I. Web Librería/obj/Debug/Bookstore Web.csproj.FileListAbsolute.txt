@@ -40,3 +40,7 @@ C:\Users\prisi\source\repos\Proyecto I. Web Librería\Proyecto I. Web Librería\
 C:\Users\prisi\source\repos\Proyecto I. Web Librería\Proyecto I. Web Librería\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\prisi\source\repos\Proyecto I. Web Librería\Proyecto I. Web Librería\bin\Newtonsoft.Json.dll
 C:\Users\prisi\source\repos\Proyecto I. Web Librería\Proyecto I. Web Librería\bin\Newtonsoft.Json.xml
+C:\Users\prisi\OneDrive\Documentos\GitHub\Bookstore-Web\Proyecto I. Web Librería\obj\Debug\Bookstore Web.csproj.AssemblyReference.cache
+C:\Users\prisi\OneDrive\Documentos\GitHub\Bookstore-Web\Proyecto I. Web Librería\obj\Debug\Bookstore Web.csproj.CoreCompileInputs.cache
+C:\Users\prisi\OneDrive\Documentos\GitHub\Bookstore-Web\Proyecto I. Web Librería\obj\Debug\Bookstore_Web.dll
+C:\Users\prisi\OneDrive\Documentos\GitHub\Bookstore-Web\Proyecto I. Web Librería\obj\Debug\Bookstore_Web.pdb
