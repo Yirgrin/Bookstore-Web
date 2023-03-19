@@ -68,6 +68,51 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\Books.css" />
+    <Content Include="css\PageStyle\css\animate.css" />
+    <Content Include="css\PageStyle\css\bootstrap.min.css" />
+    <Content Include="css\PageStyle\css\classy-nav.min.css" />
+    <Content Include="css\PageStyle\css\core-style.css" />
+    <Content Include="css\PageStyle\css\font-awesome.min.css" />
+    <Content Include="css\PageStyle\css\jquery-ui.min.css" />
+    <Content Include="css\PageStyle\css\magnific-popup.css" />
+    <Content Include="css\PageStyle\css\nice-select.css" />
+    <Content Include="css\PageStyle\css\owl.carousel.css" />
+    <Content Include="css\PageStyle\fonts\fontawesome-webfont.svg" />
+    <Content Include="css\PageStyle\img\bg-img\1.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\2.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\3.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\4.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\5.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\6.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\7.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\8.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\9.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\cart1.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\cart2.jpg" />
+    <Content Include="css\PageStyle\img\bg-img\cart3.jpg" />
+    <Content Include="css\PageStyle\img\core-img\cart.png" />
+    <Content Include="css\PageStyle\img\core-img\favicon.ico" />
+    <Content Include="css\PageStyle\img\core-img\favorites.png" />
+    <Content Include="css\PageStyle\img\core-img\logo.png" />
+    <Content Include="css\PageStyle\img\core-img\paypal.png" />
+    <Content Include="css\PageStyle\img\core-img\search.png" />
+    <Content Include="css\PageStyle\img\product-img\pro-big-1.jpg" />
+    <Content Include="css\PageStyle\img\product-img\pro-big-2.jpg" />
+    <Content Include="css\PageStyle\img\product-img\pro-big-3.jpg" />
+    <Content Include="css\PageStyle\img\product-img\pro-big-4.jpg" />
+    <Content Include="css\PageStyle\img\product-img\product1.jpg" />
+    <Content Include="css\PageStyle\img\product-img\product2.jpg" />
+    <Content Include="css\PageStyle\img\product-img\product3.jpg" />
+    <Content Include="css\PageStyle\img\product-img\product4.jpg" />
+    <Content Include="css\PageStyle\img\product-img\product5.jpg" />
+    <Content Include="css\PageStyle\img\product-img\product6.jpg" />
+    <Content Include="css\PageStyle\js\active.js" />
+    <Content Include="css\PageStyle\js\bootstrap.min.js" />
+    <Content Include="css\PageStyle\js\classy-nav.min.js" />
+    <Content Include="css\PageStyle\js\jquery\jquery-2.2.4.min.js" />
+    <Content Include="css\PageStyle\js\map-active.js" />
+    <Content Include="css\PageStyle\js\plugins.js" />
+    <Content Include="css\PageStyle\js\popper.min.js" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetBooks.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetInfoBook.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetSearchedBook.sql" />
@@ -108,6 +153,33 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\PageStyle\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\style.scssc" />
+    <Content Include="css\PageStyle\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_mixin.scssc" />
+    <Content Include="css\PageStyle\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_responsive.scssc" />
+    <Content Include="css\PageStyle\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_theme_color.scssc" />
+    <Content Include="css\PageStyle\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_variables.scssc" />
+    <Content Include="css\PageStyle\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\style.scssc" />
+    <Content Include="css\PageStyle\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_mixin.scssc" />
+    <Content Include="css\PageStyle\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_responsive.scssc" />
+    <Content Include="css\PageStyle\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_theme_color.scssc" />
+    <Content Include="css\PageStyle\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_variables.scssc" />
+    <Content Include="css\PageStyle\css\core-style.css.map" />
+    <Content Include="css\PageStyle\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\PageStyle\fonts\fontawesome-webfont.ttf" />
+    <Content Include="css\PageStyle\fonts\fontawesome-webfont.woff" />
+    <Content Include="css\PageStyle\fonts\fontawesome-webfont.woff2" />
+    <Content Include="css\PageStyle\fonts\FontAwesome.otf" />
+    <Content Include="css\PageStyle\fonts\helveticaneue_medium-webfont.ttf" />
+    <Content Include="css\PageStyle\fonts\helveticaneue_medium-webfont.woff" />
+    <Content Include="css\PageStyle\fonts\helveticaneue_medium-webfont.woff2" />
+    <Content Include="css\PageStyle\fonts\helvetica_neu_bold-webfont.ttf" />
+    <Content Include="css\PageStyle\fonts\helvetica_neu_bold-webfont.woff" />
+    <Content Include="css\PageStyle\fonts\helvetica_neu_bold-webfont.woff2" />
+    <Content Include="css\PageStyle\scss\style.scss" />
+    <Content Include="css\PageStyle\scss\_mixin.scss" />
+    <Content Include="css\PageStyle\scss\_responsive.scss" />
+    <Content Include="css\PageStyle\scss\_theme_color.scss" />
+    <Content Include="css\PageStyle\scss\_variables.scss" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

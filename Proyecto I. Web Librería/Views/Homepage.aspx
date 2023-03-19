@@ -4,142 +4,244 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <title></title>
-    <link rel="stylesheet"
-        id="theme_link"
-    <link href="../css/Books.css" rel="stylesheet" />
-    <script src="../js/site.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Librería Internacional</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../css/PageStyle/img/core-img/favicon.ico" />
+
+    <!-- Core Style CSS -->
+    <link href="../css/PageStyle/css/core-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="../css/PageStyle/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../css/PageStyle/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../css/PageStyle/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="../css/PageStyle/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="../css/PageStyle/js/active.js"></script>
+
 </head>
 
 <body>
-    <form id="form1" runat="server"> 
-    <div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="Homepage.aspx">Librería Internacional</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
+    <form id="form1" runat="server">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="Homepage.aspx">Libros</a>
-                    </li>
+        <!-- ##### Main Content Wrapper Start ##### -->
+        <div class="main-content-wrapper d-flex clearfix">
 
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin">Iniciar Sesión</a>
-                    </li>
-
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" runat="server" id="txtSearchedBook" placeholder="Buscar libros" aria-label="Search"/>
-                    <button class="btn btn-outline-success" id="btnSearch" runat="server" type="submit" onserverclick="btnSearch_ServerClick">Buscar</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-
-<%--REPEATER QUE MUESTRA LOS LIBROS--%>
-    <asp:Repeater ID="repBooks" runat="server">
-        <HeaderTemplate>
-            <div class="container">
-                <div class="row">
-        </HeaderTemplate>
-        <ItemTemplate>
-            <div id="cardBooks" class="card">
-                <img src="<%#Eval ("Photo")%>" class="rounded-4"" alt="...">
-                <h4 class="card-title"><%#Eval ("Title")%> </h4>
-                <div class="card-body">
-                    <h5 class="card-text">₡ <%#Eval ("Price")%> </h5>
-                    <hr>
-                    <a href="InfoBook.aspx?Id=<%#Eval("Id")%>" class="btn btn-outline-secondary">Ver más!</a>
-                    <a href="#?Id=<%# Eval("Id")%>" id="btnCart"class="btn btn-warning">Añadir a la bolsa</a>
-                    </div>
+            <!-- Mobile Nav (max width 767px)-->
+            <div class="mobile-nav">
+                <!-- Navbar Brand -->
+                <div class="amado-navbar-brand">
+                    <a href="Homepage.aspx">
+                        <img src="../css/PageStyle/img/core-img/logo.png" />
+                    </a>
+                </div>
+                <!-- Navbar Toggler -->
+                <div class="amado-navbar-toggler">
+                    <span></span><span></span><span></span>
                 </div>
             </div>
-        </ItemTemplate>
-        <FooterTemplate>
-            </div>
-			</div>
-        </FooterTemplate>
-    </asp:Repeater>
-</div>
 
-     <%--MODAL INICIO DE SESION--%>
-     <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLogin" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5"> Formulario Inicio Sesión</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label class="form-label mt-4">Login form</label>
-                            <div class="form-floating mb-3">
-                                <input type="email" runat="server" class="form-control" id="txtEmail" value="prisiaguilar@gmail.com" placeholder="name@example.com" />
-                                <label for="floatingInput">Email address</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" runat="server" class="form-control"  id="txtPass" value="admin123" placeholder="Password" />
-                                <label for="floatingPassword">Password</label>
+            <!-- Header Area Start -->
+            <header class="header-area clearfix">
+                <!-- Close Icon -->
+                <div class="nav-close">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                </div>
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="Homepage.aspx">
+                        <img src="../css/PageStyle/img/core-img/logo.png" /></a>
+                </div>
+                <!-- Amado Nav -->
+                <nav class="amado-nav">
+                    <ul>
+                        <li><a href="Homepage.aspx">Página Principal</a></li>
+                        <li><a href="Homepage.aspx">Libros</a></li>
+                        <li><a href="#">Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Button Group -->
+                <div class="amado-btn-group mt-30 mb-100">
+                </div>
+
+                <!-- Cart Menu -->
+                <div class="cart-fav-search mb-100">
+                    <a href="ShoppingCart.aspx" class="cart-nav">
+                        <img src="../css/PageStyle/img/core-img/cart.png" />
+                        Carrito <span>(0)</span></a>
+                    <a href="#" class="fav-nav">
+                        <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos</a>
+                    <a href="#" class="search-nav">
+                        <img src="../css/PageStyle/img/core-img/search.png" />Buscar </a>
+                </div>
+
+                <!-- Social Button -->
+                <div class="social-info d-flex justify-content-between">
+                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
+            </header>
+            <!-- Header Area End -->
+
+            <!--<div class="shop_sidebar_area"> </div> -->
+            <div class="amado_product_area section-padding-100">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="product-topbar d-xl-flex align-items-end justify-content-between">
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" runat="server" id="txtSearchedBook" placeholder="Buscar libros por Título, Autor o ISBN" aria-label="Search" />
+                                    <button class="btn btn-outline-warning" id="btnSearch" runat="server" onserverclick="btnSearch_ServerClick">Buscar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button id="btnLogin" class="btn btn-primary" runat="server" onserverclick="btnLogin_ServerClick">Iniciar Sesión</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-                <div hidden="hidden" id="cardUser" runat="server">
-                    <div class="form-group">
-                        <div class="card" style="border-radius: 15px;">
-                            <div class="card-body p-4">
-                                <div class="row">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                                        alt="Generic placeholder image" class="img-fluid"
-                                        style="width: 180px; border-radius: 10px;" />
-                                    <div class="row">
-                                        <h5 id="lblName" runat="server" class="mb-1"></h5>
-                                        <div class="d-flex pt-1">
-                                            <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">View profile</button>
-                                             </div>
+
+
+
+                    <div class="row no-gutters">
+
+                        <%--REPEATER QUE MUESTRA LOS LIBROS--%>
+                        <asp:Repeater ID="repBooks" runat="server">
+                            <ItemTemplate>
+                                <!-- Product Area -->
+                                <div class="col-12 col-sm-6">
+                                    <div class="single-product-wrapper">
+                                        <!-- Product Image -->
+                                        <div>
+                                            <a href="InfoBook.aspx?Id=<%# Eval("Id")%>">
+                                                <img src="<%#Eval ("Photo")%>" style="width: 300px; height: 400px;" />
+                                        </div>
+
+                                        <!-- Product Description -->
+                                        <div class="product-description d-flex align-items-center">
+                                            <!-- Product Meta Data -->
+                                            <div class="product-meta-data">
+                                                <div class="line"></div>
+                                                <p class="product-price">₡ <%#Eval ("Price")%></p>
+                                                <a href="InfoBook.aspx?Id=<%# Eval("Id")%>">
+                                                    <h4><%#Eval ("Title")%> </h4>
+                                                </a>
+                                            </div>
+                                            <!-- Ratings & Cart -->
+                                            <div class="ratings-cart text-right">
+                                                <div class="ratings">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="cart">
+                                                    <a href="ShoppingCart.aspx" data-toggle="tooltip" data-placement="left" title="Añadir al Carrito">
+                                                        <img src="../css/PageStyle/img/core-img/cart.png" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-           
-
-    <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
-                            <label id="lblModalTitle"></label>
-                        </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <label id="lblModalMessage"></label>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
             </div>
         </div>
- </form>
+
+
+        <!-- ##### Newsletter Area Start ##### -->
+        <section class="newsletter-area section-padding-100-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Newsletter Text -->
+                    <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="newsletter-text mb-100">
+                            <h2>Subscribe for a <span>25% Discount</span></h2>
+                            <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.</p>
+                        </div>
+                    </div>
+                    <!-- Newsletter Form -->
+                    <div class="col-12 col-lg-6 col-xl-5">
+                        <div class="newsletter-form mb-100">
+                            <form action="#" method="post">
+                                <input type="email" name="email" class="nl-email" placeholder="Your E-mail" />
+                                <input type="submit" value="Subscribe" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ##### Newsletter Area End ##### -->
+
+        <!-- ##### Footer Area Start ##### -->
+        <footer class="footer_area clearfix">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Single Widget Area -->
+                    <div class="col-12 col-lg-4">
+                        <div class="single_widget_area">
+                            <!-- Logo -->
+                            <div class="footer-logo mr-50">
+                                <a href="index.html">
+                                    <img src="img/core-img/logo2.png" alt=""></a>
+                            </div>
+                            <!-- Copywrite Text -->
+                            <p class="copywrite">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i>by <a href="https://colorlib.com" target="_blank">Colorlib</a> & Re-distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                    </div>
+                    <!-- Single Widget Area -->
+                    <div class="col-12 col-lg-8">
+                        <div class="single_widget_area">
+                            <!-- Footer Menu -->
+                            <div class="footer_menu">
+                                <nav class="navbar navbar-expand-lg justify-content-end">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footerNavContent" aria-controls="footerNavContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                                    <div class="collapse navbar-collapse" id="footerNavContent">
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="index.html">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="shop.html">Shop</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="product-details.html">Product</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="cart.html">Cart</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="checkout.html">Checkout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
 </body>
 </html>
-    
- 
+
+
