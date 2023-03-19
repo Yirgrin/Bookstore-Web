@@ -61,12 +61,11 @@ namespace Bookstore_Web
 
         protected void btnSearch_ServerClick(object sender, EventArgs e)
         {
-            string SearchBook = txtSearchedBook.Value.ToString();
+            string search = txtSearchedBook.Value.ToString();
 
             c.Books booksController = new c.Books();
-            List<m.Book> book = booksController.GetSearchedBook(SearchBook);
-            repSearch.DataSource = book;
-            repSearch.DataBind();
+            repBooks.DataSource = booksController.GetSearchedBook(search); ;
+            repBooks.DataBind();
         }
     }
 }

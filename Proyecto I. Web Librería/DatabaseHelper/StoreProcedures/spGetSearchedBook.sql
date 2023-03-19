@@ -1,5 +1,5 @@
 
-CREATE PROCEDURE GetSearchedBook
+CREATE PROCEDURE spGetSearchedBook
 	
 	@search varchar(MAX)
 AS

@@ -33,13 +33,12 @@ namespace Bookstore_Web.DatabaseHelper
         }
 
 
-        public DataTable GetSearchedBook(string book)
+        public DataTable GetSearchedBook(string search)
         {
 
             List<SqlParameter> param = new List<SqlParameter>()
             {
-                new SqlParameter("@Title", book),
-                new SqlParameter("@ISBN", book)
+                new SqlParameter("@search", search),
             };
 
             return this.Fill("[dbo].[spGetSearchedBook]", param);

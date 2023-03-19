@@ -34,13 +34,13 @@ namespace Bookstore_Web.Controller
             return ConvertDSToList(ds);
         }
 
-        public List<m.Book> GetSearchedBook(string book)
+        public List<m.Book> GetSearchedBook(string search)
         {
             List<m.Book> bookList = new List<m.Book>();
 
             DatabaseHelper.Database db = new DatabaseHelper.Database();
 
-            DataTable ds = db.GetSearchedBook(book); 
+            DataTable ds = db.GetSearchedBook(search); 
 
             return ConvertDSToList(ds);
         }

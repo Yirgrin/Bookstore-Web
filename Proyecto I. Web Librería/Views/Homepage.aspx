@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <form id="form1" runat="server"> 
     <div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -137,7 +138,7 @@
                 </div>
             </div>
         </div>
-
+ </form>
 </body>
 </html>
     
