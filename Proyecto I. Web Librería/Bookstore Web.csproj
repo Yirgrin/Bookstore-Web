@@ -78,34 +78,12 @@
     <Content Include="css\PageStyle\css\nice-select.css" />
     <Content Include="css\PageStyle\css\owl.carousel.css" />
     <Content Include="css\PageStyle\fonts\fontawesome-webfont.svg" />
-    <Content Include="css\PageStyle\img\bg-img\1.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\2.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\3.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\4.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\5.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\6.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\7.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\8.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\9.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\cart1.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\cart2.jpg" />
-    <Content Include="css\PageStyle\img\bg-img\cart3.jpg" />
     <Content Include="css\PageStyle\img\core-img\cart.png" />
     <Content Include="css\PageStyle\img\core-img\favicon.ico" />
     <Content Include="css\PageStyle\img\core-img\favorites.png" />
     <Content Include="css\PageStyle\img\core-img\logo.png" />
     <Content Include="css\PageStyle\img\core-img\paypal.png" />
     <Content Include="css\PageStyle\img\core-img\search.png" />
-    <Content Include="css\PageStyle\img\product-img\pro-big-1.jpg" />
-    <Content Include="css\PageStyle\img\product-img\pro-big-2.jpg" />
-    <Content Include="css\PageStyle\img\product-img\pro-big-3.jpg" />
-    <Content Include="css\PageStyle\img\product-img\pro-big-4.jpg" />
-    <Content Include="css\PageStyle\img\product-img\product1.jpg" />
-    <Content Include="css\PageStyle\img\product-img\product2.jpg" />
-    <Content Include="css\PageStyle\img\product-img\product3.jpg" />
-    <Content Include="css\PageStyle\img\product-img\product4.jpg" />
-    <Content Include="css\PageStyle\img\product-img\product5.jpg" />
-    <Content Include="css\PageStyle\img\product-img\product6.jpg" />
     <Content Include="css\PageStyle\js\active.js" />
     <Content Include="css\PageStyle\js\bootstrap.min.js" />
     <Content Include="css\PageStyle\js\classy-nav.min.js" />
@@ -118,9 +96,11 @@
     <Content Include="DatabaseHelper\StoreProcedures\spGetSearchedBook.sql" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
+    <Content Include="Views\Create Account.aspx" />
     <Content Include="Views\Homepage.aspx" />
     <Content Include="Views\InfoBook.aspx" />
     <Content Include="Views\ShoppingCart.aspx" />
+    <Content Include="Views\SingIn.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +109,13 @@
     <Compile Include="DatabaseHelper\Database.cs" />
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Views\Create Account.aspx.cs">
+      <DependentUpon>Create Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Create Account.aspx.designer.cs">
+      <DependentUpon>Create Account.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,6 +137,13 @@
     </Compile>
     <Compile Include="Views\ShoppingCart.aspx.designer.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SingIn.aspx.cs">
+      <DependentUpon>SingIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SingIn.aspx.designer.cs">
+      <DependentUpon>SingIn.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

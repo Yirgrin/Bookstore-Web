@@ -57,7 +57,7 @@ namespace Bookstore_Web.Controller
                     ISBN = row["ISBN"].ToString(),
                     Title = row["Title"].ToString(),
                     Author = row["Author"].ToString(),
-                    ReleaseDate = Convert.ToDateTime(row["ReleaseDate"]),
+                    ReleaseDate = Convert.ToDateTime(row["ReleaseDate"]).ToShortDateString(),
                     Description = row["Description"].ToString(),
                     Photo = row["Photo"].ToString(),
                     Price = Convert.ToDecimal(row["Price"])

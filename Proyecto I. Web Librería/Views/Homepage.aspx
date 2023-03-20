@@ -67,7 +67,7 @@
                     <ul>
                         <li><a href="Homepage.aspx">Página Principal</a></li>
                         <li><a href="Homepage.aspx">Libros</a></li>
-                        <li><a href="#">Iniciar Sesión</a></li>
+                        <li><a id="lblUser" href="SingIn.aspx">Iniciar Sesión</a></li>
                     </ul>
                 </nav>
 
@@ -82,7 +82,7 @@
                         Carrito <span>(0)</span></a>
                     <a href="#" class="fav-nav">
                         <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos</a>
-                    <a href="#" class="search-nav">
+                    <a href="Homepage.aspx" class="search-nav">
                         <img src="../css/PageStyle/img/core-img/search.png" />Buscar </a>
                 </div>
 
@@ -110,11 +110,7 @@
                         </div>
                     </div>
 
-
-
-
                     <div class="row no-gutters">
-
                         <%--REPEATER QUE MUESTRA LOS LIBROS--%>
                         <asp:Repeater ID="repBooks" runat="server">
                             <ItemTemplate>
@@ -161,7 +157,6 @@
             </div>
         </div>
 
-
         <!-- ##### Newsletter Area Start ##### -->
         <section class="newsletter-area section-padding-100-0">
             <div class="container">
@@ -169,16 +164,15 @@
                     <!-- Newsletter Text -->
                     <div class="col-12 col-lg-6 col-xl-7">
                         <div class="newsletter-text mb-100">
-                            <h2>Subscribe for a <span>25% Discount</span></h2>
-                            <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.</p>
+                            <h2>Suscríbase para recibir nuestras <span>mejores ofertas</span></h2>
                         </div>
                     </div>
                     <!-- Newsletter Form -->
                     <div class="col-12 col-lg-6 col-xl-5">
                         <div class="newsletter-form mb-100">
                             <form action="#" method="post">
-                                <input type="email" name="email" class="nl-email" placeholder="Your E-mail" />
-                                <input type="submit" value="Subscribe" />
+                                <input type="email" name="email" class="nl-email" placeholder="Correo Electrónico" />
+                                <input type="submit" value="Enviar" />
                             </form>
                         </div>
                     </div>
@@ -197,7 +191,7 @@
                             <!-- Logo -->
                             <div class="footer-logo mr-50">
                                 <a href="index.html">
-                                    <img src="img/core-img/logo2.png" alt=""></a>
+                                    <img src="../css/PageStyle/img/core-img/logo.png" /></a>
                             </div>
                             <!-- Copywrite Text -->
                             <p class="copywrite">
@@ -207,6 +201,8 @@
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
                     </div>
+
+
                     <!-- Single Widget Area -->
                     <div class="col-12 col-lg-8">
                         <div class="single_widget_area">
@@ -217,19 +213,19 @@
                                     <div class="collapse navbar-collapse" id="footerNavContent">
                                         <ul class="navbar-nav ml-auto">
                                             <li class="nav-item active">
-                                                <a class="nav-link" href="index.html">Home</a>
+                                                <a class="nav-link" href="Homepage.aspx">Inicio</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="shop.html">Shop</a>
+                                                <a class="nav-link" href="https://www.libreriainternacional.com/contacto">Contacto</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="product-details.html">Product</a>
+                                                <a class="nav-link" href="https://www.libreriainternacional.com/nosotrosNosotros">Nosotros</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="cart.html">Cart</a>
+                                                <a class="nav-link" href="https://www.libreriainternacional.com/terminos-y-condiciones">Políticas</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="checkout.html">Checkout</a>
+                                                <a class="nav-link" href="https://www.libreriainternacional.com/encuentra-una-tienda.html">Encuentrános</a>
                                             </li>
                                         </ul>
                                     </div>

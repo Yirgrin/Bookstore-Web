@@ -55,7 +55,7 @@ namespace Bookstore_Web
         {
             if (Session["loginInfo"] != null)
             { 
-                cardUser.Attributes.Remove("hidden");
+               
             }
         }
 

@@ -4,93 +4,207 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <title></title>
-    <link rel="stylesheet"
-		id="theme_link"
-	<link href="../css/Books.css" rel="stylesheet" />
-	<script src="../js/site.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Librería Internacional</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="../css/PageStyle/img/core-img/favicon.ico" />
+
+    <!-- Core Style CSS -->
+    <link href="../css/PageStyle/css/core-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="../css/PageStyle/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../css/PageStyle/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../css/PageStyle/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="../css/PageStyle/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="../css/PageStyle/js/active.js"></script>
+
 </head>
 
 <body>
-    <div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="Homepage.aspx">Librería Internacional</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarColor01">
-                    <ul class="navbar-nav me-auto">
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Books</a>
-                        </li>
+    <form id="form1" runat="server">
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Log In</a>
-                        </li>
+        <div class="main-content-wrapper d-flex clearfix">
 
-
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search Book" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+            <!-- Mobile Nav (max width 767px)-->
+            <div class="mobile-nav">
+                <!-- Navbar Brand -->
+                <div class="amado-navbar-brand">
+                    <a href="Homepage.aspx">
+                        <img src="../css/PageStyle/img/core-img/logo.png" />
+                    </a>
+                </div>
+                <!-- Navbar Toggler -->
+                <div class="amado-navbar-toggler">
+                    <span></span><span></span><span></span>
                 </div>
             </div>
-        </nav>
 
-        <asp:Repeater ID="repInfoBook" runat="server">
-            <HeaderTemplate>
-                <div class="container">
-                    <div class="row">
-            </HeaderTemplate>
-            <ItemTemplate>
-                <div id="cardInfoBook" class="card" margin-top="20px">
-                    <h3 class="card-header"><%#Eval ("Title")%> </h3>
-                    <div class="card-body">
-                        <div class="row justify-content-start">
-                        <div class="col-4">
-                          <img src="<%#Eval ("Photo")%>" class="rounded-4"" alt="...">
-                        </div>
-                            <div class="col-4">
-                                <h5><p class="card-text">
-                                        <br>
-                                        ISBN: <%#Eval ("ISBN")%>
-                                        <br>
-                                        Autor: <%#Eval ("Author")%>
-                                        <br>
-                                        Fecha de lanzamiento: <%#Eval ("ReleaseDate")%>
-                                        <br>
-                                        Precio: ₡ <%#Eval ("Price")%>
-                                        <br>
-                                        <br>
-                                        <hr>
-                                    </p></h5>
-                                <p> <%#Eval ("Description")%></p>
+            <!-- Header Area Start -->
+            <header class="header-area clearfix">
+                <!-- Close Icon -->
+                <div class="nav-close">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                </div>
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="Homepage.aspx">
+                        <img src="../css/PageStyle/img/core-img/logo.png" /></a>
+                </div>
+                <!-- Amado Nav -->
+                <nav class="amado-nav">
+                    <ul>
+                        <li><a href="Homepage.aspx">Página Principal</a></li>
+                        <li><a href="Homepage.aspx">Libros</a></li>
+                        <li><a id="lblUser" href="SingIn.aspx">Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Button Group -->
+                <div class="amado-btn-group mt-30 mb-100">
+                </div>
+
+                <!-- Cart Menu -->
+                <div class="cart-fav-search mb-100">
+                    <a href="ShoppingCart.aspx" class="cart-nav">
+                        <img src="../css/PageStyle/img/core-img/cart.png" />
+                        Carrito <span>(0)</span></a>
+                    <a href="#" class="fav-nav">
+                        <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos</a>
+                    <a href="Homepage.aspx" class="search-nav">
+                        <img src="../css/PageStyle/img/core-img/search.png" />Buscar </a>
+                </div>
+
+                <!-- Social Button -->
+                <div class="social-info d-flex justify-content-between">
+                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
+            </header>
+            <!-- Header Area End -->
+
+            <asp:Repeater ID="repInfoBook" runat="server">
+                <ItemTemplate>
+                    <!-- Product Details Area Start -->
+                    <div class="single-product-area section-padding-100 clearfix">
+                        <div class="container-fluid">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb mt-50">
+                                            <li class="breadcrumb-item"><a href="Homepage.aspx">Inicio</a></li>
+                                            <li class="breadcrumb-item"><a href="Homepage.aspx">Búsquedas</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page"><%#Eval ("Title")%></li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 col-lg-7">
+                                    <div class="single_product_thumb">
+                                        <a class="gallery_img">
+                                            <img src="<%#Eval ("Photo")%>" />
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-5">
+                                    <div class="single_product_desc">
+                                        <!-- Product Meta Data -->
+                                        <div class="product-meta-data">
+                                            <div class="line"></div>
+                                            <p class="product-price">₡ <%#Eval ("Price")%></p>
+                                            <h2><%#Eval ("Title")%></h2>
+
+                                            <!-- Ratings & Review -->
+                                            <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+                                                <div class="ratings">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="avaibility"><i class="fa fa-circle"></i>In Stock</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="review">
+                                                <br>
+                                                ISBN: <%#Eval ("ISBN")%>
+                                                <br>
+                                                Autor: <%#Eval ("Author")%>
+                                                <br>
+                                                Fecha de lanzamiento: <%#Eval ("ReleaseDate")%>
+                                            </div>
+
+
+
+                                            <div class="short_overview my-5">
+                                                <p><%#Eval ("Description")%></p>
+                                            </div>
+
+                                            <!-- Add to Cart Form -->
+                                            <button href="#?Id=<%# Eval("Id")%>" id="btnCart" type="submit" class="btn amado-btn">Añadir al Carrito</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <a href="#?Id=<%# Eval("Id")%>" id="btnCart"class="btn btn-warning">Add to Cart</a>
-                    </div>
+                        <!-- Product Details Area End -->
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+
+
+
+        <!-- Single Widget Area -->
+        <div class="col-12 col-lg-8">
+            <div class="single_widget_area">
+                <!-- Footer Menu -->
+                <div class="footer_menu">
+                    <nav class="navbar navbar-expand-lg justify-content-end">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footerNavContent" aria-controls="footerNavContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                        <div class="collapse navbar-collapse" id="footerNavContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="Homepage.aspx">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.libreriainternacional.com/contacto">Contacto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.libreriainternacional.com/nosotrosNosotros">Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.libreriainternacional.com/terminos-y-condiciones">Políticas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.libreriainternacional.com/encuentra-una-tienda.html">Encuentrános</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
-    </div>
+            </div>
+        </div>
+
+    </form>
 </body>
 </html>
