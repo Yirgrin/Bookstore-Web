@@ -72,6 +72,7 @@
 
                 <!-- Button Group -->
                 <div class="amado-btn-group mt-30 mb-100">
+                    <button class="btn btn-outline-warning" id="btnLogout" runat="server"> Cerrar Sesion</button>
                 </div>
 
                 <!-- Cart Menu -->
@@ -108,13 +109,13 @@
                                 <form action="#" method="post">
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
-                                            <input type="email" class="form-control" id="first_name" value="" placeholder="Correo Electrónico" required />
+                                            <input type="email" class="form-control" id="txtEmail" runat="server" value="prisiaguilar@gmail.com" placeholder="Correo Electrónico" required />
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <input type="password" class="form-control" id="zipCode" placeholder="Contraseña" value="" required />
+                                            <input  class="form-control" id="txtPass" runat="server" placeholder="Contraseña" value="admin123" required />
                                         </div>
                                         <div class="cart-btn mt-100">
-                                            <a href="#" class="btn amado-btn w-100">Iniciar Sesión</a>
+                                            <a id="btnLogin" runat="server" class="btn amado-btn w-100" onserverclick="btnLogin_ServerClick"> Iniciar Sesión</a>
                                         </div>
                                     </div>
                                 </form>

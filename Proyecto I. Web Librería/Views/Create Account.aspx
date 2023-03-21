@@ -73,6 +73,7 @@
 
                 <!-- Button Group -->
                 <div class="amado-btn-group mt-30 mb-100">
+                    <button class="btn btn-outline-warning" id="btnLogout" runat="server" onserverclick="btnLogout_ServerClick"> Cerrar Sesion</button>
                 </div>
 
                 <!-- Cart Menu -->

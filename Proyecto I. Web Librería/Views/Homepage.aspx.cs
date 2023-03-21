@@ -1,6 +1,7 @@
 ﻿using Bookstore_Web.Model;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,38 +25,18 @@ namespace Bookstore_Web
             }
         }
 
-        protected void btnLogin_ServerClick(object sender, EventArgs e)
-        {
-            string msg = string.Empty;
-            c.Login loginController = new c.Login();
-
-            LoginResponsePayload loginInfo = loginController.SignInWithPassword(new Model.LoginResponsePayload
-            {
-                email = txtEmail.Value,
-                password = txtPass.Value
-            });
-
-            if (loginInfo != null && loginInfo.registered)
-            {
-                Session["loginInfo"] = loginInfo;
-                msg = "Bienvenido " + txtEmail.Value;
-                IsLogged();
-
-
-            }
-            else
-            {
-                msg = "Tus datos son incorrectos";
-            }
-
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showModal('Login','" + msg + "')", true);
-        }
-
         private void IsLogged()
         {
-            if (Session["loginInfo"] != null)
+            if (Session["loginInfo"] == null)
             { 
-               
+               btnLogout.Visible = false;
+                lblUser.Visible = true;
+
+            }
+            else 
+            {
+                btnLogout.Visible = true;
+                lblUser.Visible = false;
             }
         }
 
@@ -66,6 +47,15 @@ namespace Bookstore_Web
             c.Books booksController = new c.Books();
             repBooks.DataSource = booksController.GetSearchedBook(search); ;
             repBooks.DataBind();
+        }
+
+        protected void btnLogout_ServerClick(object sender, EventArgs e)
+        {
+            string msg = string.Empty;
+            Session.Clear();
+            IsLogged();
+            msg = $"alert('¡Gracias por preferirnos!')";
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
         }
     }
 }

@@ -67,12 +67,13 @@
                     <ul>
                         <li><a href="Homepage.aspx">Página Principal</a></li>
                         <li><a href="Homepage.aspx">Libros</a></li>
-                        <li><a id="lblUser" href="SingIn.aspx">Iniciar Sesión</a></li>
+                        <li><a id="lblUser" runat="server" href="SingIn.aspx">Iniciar Sesión</a></li>
                     </ul>
                 </nav>
 
                 <!-- Button Group -->
                 <div class="amado-btn-group mt-30 mb-100">
+                    <button class="btn btn-outline-warning" id="btnLogout" runat="server" onserverclick="btnLogout_ServerClick"> Cerrar Sesion</button>
                 </div>
 
                 <!-- Cart Menu -->

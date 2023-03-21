@@ -105,7 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Books.cs" />
-    <Compile Include="Controller\Login.cs" />
+    <Compile Include="Controller\SingIn.cs" />
     <Compile Include="DatabaseHelper\Database.cs" />
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\User.cs" />
