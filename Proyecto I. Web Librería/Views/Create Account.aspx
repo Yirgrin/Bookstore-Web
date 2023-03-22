@@ -67,13 +67,13 @@
                     <ul>
                         <li><a href="Homepage.aspx">Página Principal</a></li>
                         <li><a href="Homepage.aspx">Libros</a></li>
-                        <li><a id="lblUser" href="SingIn.aspx">Iniciar Sesión</a></li>
+                        <li><a id="lblUser" runat="server" href="SingIn.aspx">Iniciar Sesión</a></li>
                     </ul>
                 </nav>
 
                 <!-- Button Group -->
                 <div class="amado-btn-group mt-30 mb-100">
-                    <button class="btn btn-outline-warning" id="btnLogout" runat="server" onserverclick="btnLogout_ServerClick"> Cerrar Sesion</button>
+                    <button class="btn btn-outline-warning" id="btnLogout" runat="server"> Cerrar Sesion</button>
                 </div>
 
                 <!-- Cart Menu -->
@@ -113,13 +113,13 @@
                                 <input type="text" class="form-control" id="last_name" value="" placeholder="Apellidos" required />
                             </div>
                             <div class="col-12 mb-3">
-                                <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" value="" required />
+                                <input type="email" class="form-control" runat="server" id="email" placeholder="Correo Electrónico" value="" required />
                             </div>
                             <div class="col-md-6 mb-3">
                                 <input type="text" class="form-control" id="zipCode" placeholder="Identificación" value="" required />
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="password" class="form-control" id="phone_number" placeholder="Contraseña" value="" required />
+                                <input type="password" class="form-control" runat="server" id="password" placeholder="Contraseña" value="" required />
                             </div>
                         </div>
 
@@ -132,7 +132,7 @@
 
 
                         <div class="cart-btn mt-100">
-                            <a href="#" class="btn amado-btn w-100">Registrarse</a>
+                            <a id="btnSingUp" runat="server" onserverclick="btnSingUp_ServerClick" class="btn amado-btn w-100">Registrarse</a>
                         </div>
 
                     </form>

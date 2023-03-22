@@ -112,7 +112,7 @@
                                             <input type="email" class="form-control" id="txtEmail" runat="server" value="prisiaguilar@gmail.com" placeholder="Correo Electrónico" required />
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <input  class="form-control" id="txtPass" runat="server" placeholder="Contraseña" value="admin123" required />
+                                            <input  class="form-control" type="password" id="txtPass" runat="server" placeholder="Contraseña" value="admin123" required />
                                         </div>
                                         <div class="cart-btn mt-100">
                                             <a id="btnLogin" runat="server" class="btn amado-btn w-100" onserverclick="btnLogin_ServerClick"> Iniciar Sesión</a>
