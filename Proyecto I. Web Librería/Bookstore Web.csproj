@@ -94,9 +94,11 @@
     <Content Include="DatabaseHelper\StoreProcedures\spGetBooks.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetInfoBook.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetSearchedBook.sql" />
+    <Content Include="DatabaseHelper\StoreProcedures\spSaveFavoriteBooks.sql" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Views\Create Account.aspx" />
+    <Content Include="Views\Favorites.aspx" />
     <Content Include="Views\Homepage.aspx" />
     <Content Include="Views\InfoBook.aspx" />
     <Content Include="Views\ShoppingCart.aspx" />
@@ -116,6 +118,13 @@
     </Compile>
     <Compile Include="Views\Create Account.aspx.designer.cs">
       <DependentUpon>Create Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Favorites.aspx.cs">
+      <DependentUpon>Favorites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Favorites.aspx.designer.cs">
+      <DependentUpon>Favorites.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>

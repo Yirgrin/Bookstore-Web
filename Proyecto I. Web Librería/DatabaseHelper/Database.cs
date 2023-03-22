@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Bookstore_Web.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using m = Bookstore_Web.Model;
 
 namespace Bookstore_Web.DatabaseHelper
 {
@@ -44,6 +46,28 @@ namespace Bookstore_Web.DatabaseHelper
             return this.Fill("[dbo].[spGetSearchedBook]", param);
         }
 
+        public void SaveFavoriteBook(m.Book book)
+        {
+            List<SqlParameter> param = new List<SqlParameter>()
+            {
+                new SqlParameter("@bookId", book.Id),
+                new SqlParameter("@email", book.email),
+            };
+
+            this.ExecuteQuery("[dbo].[spSaveFavoriteBook]", param);
+        }
+
+        public DataTable GetFavoriteBooks(string email)
+        {
+
+            List<SqlParameter> param = new List<SqlParameter>()
+            {
+                new SqlParameter("@Email", email),
+            };
+
+            return this.Fill("[dbo].[spGetFavoriteBooks]", param);
+        }
+
 
         //Conexión a la BD Fill, devuelve datos
         //Conexión a la BD ExecuteNonQuery, elimina, inserta, mopdifica en la base de datos...
@@ -70,6 +94,34 @@ namespace Bookstore_Web.DatabaseHelper
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     adapter.Fill(ds);
                     return ds;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void ExecuteQuery(string storedProcedure, List<SqlParameter> param)
+        {
+            try
+            {
+                using (this.connection)
+                {
+                    connection.Open();
+                    SqlCommand cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = storedProcedure;
+
+                    if (param != null)
+                    {
+                        foreach (SqlParameter p in param)
+                        {
+                            cmd.Parameters.Add(p);
+                        }
+                    }
+
+                    cmd.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)

@@ -81,7 +81,7 @@
                     <a href="ShoppingCart.aspx" class="cart-nav">
                         <img src="../css/PageStyle/img/core-img/cart.png" />
                         Carrito <span>(0)</span></a>
-                    <a href="#" class="fav-nav">
+                    <a href="Favorites.aspx" class="fav-nav">
                         <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos</a>
                     <a href="Homepage.aspx" class="search-nav">
                         <img src="../css/PageStyle/img/core-img/search.png" />Buscar </a>
@@ -94,7 +94,7 @@
                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 </div>
-            </header>
+            </header> 
             <!-- Header Area End -->
 
             <!--<div class="shop_sidebar_area"> </div> -->

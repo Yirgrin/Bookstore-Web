@@ -45,6 +45,33 @@ namespace Bookstore_Web.Controller
             return ConvertDSToList(ds);
         }
 
+        public bool SaveFavoriteBook(m.Book book)
+        {
+            try
+            {
+                DatabaseHelper.Database db = new DatabaseHelper.Database();
+
+                db.SaveFavoriteBook(book);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public List<m.Book> GetFavoriteBooks(LoginResponsePayload session)
+        {
+            List<m.Book> bookList = new List<m.Book>();
+
+            DatabaseHelper.Database db = new DatabaseHelper.Database();
+
+            DataTable ds = db.GetFavoriteBooks(session.email);
+
+            return ConvertDSToList(ds);
+        }
+
         public List<m.Book> ConvertDSToList(DataTable ds)
         {
             List<m.Book> bookList = new List<m.Book>();

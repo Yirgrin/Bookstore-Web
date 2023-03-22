@@ -8,7 +8,9 @@ namespace Bookstore_Web.Model
 {
     public class Book
     {
+
         public int Id { get; set; }
+        public LoginResponsePayload email { get; set; }
         public String ISBN { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
@@ -16,5 +18,6 @@ namespace Bookstore_Web.Model
         public string Description { get; set; }
         public string Photo { get; set; }
         public decimal Price { get; set; }
+
     }
 }

@@ -163,6 +163,7 @@
 
                                             <!-- Add to Cart Form -->
                                             <button href="#?Id=<%# Eval("Id")%>" id="btnCart" type="submit" class="btn amado-btn">Añadir al Carrito</button>
+                                            <button id="btnFavotite" runat="server" onserverclick="btnFavotite_ServerClick" type="submit" class="btn amado-btn">Añadir a Favoritos</button>
                                         </div>
                                     </div>
                                 </div>
