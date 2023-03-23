@@ -21,7 +21,7 @@ namespace Bookstore_Web.Views
 
                 c.Books booksController = new c.Books();
                 List<m.Book> book = booksController.GetInfoBook(Id);
-                Session["loginInfo"] = book;
+                Session["book"] = book;
                 repInfoBook.DataSource = book;
                 repInfoBook.DataBind();
             }
@@ -42,6 +42,17 @@ namespace Bookstore_Web.Views
             }
         }
 
+        protected void userEmail()
+        {
+            List<m.Book> books = (List<m.Book>)Session["book"];
+
+            m.Book book = new m.Book()
+            {
+                Id = books[0].Id,
+                email = (m.LoginResponsePayload)Session["loginInfo"],
+            };
+            Session["book"] = book;
+        }
         protected void btnLogout_ServerClick(object sender, EventArgs e)
         {
             string msg = string.Empty;
@@ -60,7 +71,9 @@ namespace Bookstore_Web.Views
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
             }
 
-            m.Book book = (m.Book)Session["book"];
+            useremail();
+            m.Book book = (m.Book)Session["Book"];
+
             c.Books bookController = new c.Books();
 
             if (bookController.SaveFavoriteBook(book))
