@@ -16,9 +16,10 @@ namespace Bookstore_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            IsLogged();
+
             if (!IsPostBack)
             {
-                IsLogged();
                 c.Books bookController = new c.Books();
                 repBooks.DataSource = bookController.GetBooks();
                 repBooks.DataBind();

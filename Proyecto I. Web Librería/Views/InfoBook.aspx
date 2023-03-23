@@ -142,7 +142,7 @@
                                                     <i class="fa fa-star" aria-hidden="true"></i>
                                                 </div>
                                                 <div>
-                                                    <p class="avaibility"><i class="fa fa-circle"></i>In Stock</p>
+                                                    <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
                                                 </div>
                                             </div>
 
@@ -163,7 +163,7 @@
 
                                             <!-- Add to Cart Form -->
                                             <button href="#?Id=<%# Eval("Id")%>" id="btnCart" type="submit" class="btn amado-btn">Añadir al Carrito</button>
-                                            <button id="btnFavotite" runat="server" onserverclick="btnFavotite_ServerClick" type="submit" class="btn amado-btn">Añadir a Favoritos</button>
+                                            <button id="btnFavorite" runat="server" onserverclick="btnFavorite_ServerClick" type="submit" class="btn amado-btn">Añadir a Favoritos</button>
                                         </div>
                                     </div>
                                 </div>

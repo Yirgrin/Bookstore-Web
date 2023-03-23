@@ -10,7 +10,7 @@ namespace Bookstore_Web.Model
     {
 
         public int Id { get; set; }
-        public LoginResponsePayload email { get; set; }
+        public string email { get; set; }
         public String ISBN { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }

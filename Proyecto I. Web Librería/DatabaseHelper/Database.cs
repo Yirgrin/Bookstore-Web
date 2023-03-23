@@ -51,7 +51,7 @@ namespace Bookstore_Web.DatabaseHelper
             List<SqlParameter> param = new List<SqlParameter>()
             {
                 new SqlParameter("@bookId", book.Id),
-                new SqlParameter("@email", book.email),
+                new SqlParameter("@Email", book.email),
             };
 
             this.ExecuteQuery("[dbo].[spSaveFavoriteBook]", param);

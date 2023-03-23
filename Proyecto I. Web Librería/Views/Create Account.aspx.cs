@@ -17,7 +17,6 @@ namespace Bookstore_Web.Views
             IsLogged();
         }
 
-
         protected void btnSingUp_ServerClick(object sender, EventArgs e)
         {
             string msg = string.Empty;
@@ -26,12 +25,15 @@ namespace Bookstore_Web.Views
             LoginResponsePayload loginInfo = SignUpController.SignUpWithPassword(new Model.LoginResponsePayload
             {
                 email = email.Value,
-                password = password.Value
+                password = password.Value,
+                
             });
 
-            if (loginInfo.registered)
+
+            if (loginInfo.registered == false)
             {
                 Session["loginInfo"] = loginInfo;
+                Response.Redirect("~/Views/Homepage.aspx");
 
             }
             else if (loginInfo == null)
@@ -39,7 +41,7 @@ namespace Bookstore_Web.Views
                 msg = $"alert('Algo salio mal. Intenta de nuevo.')";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
             }
-            Response.Redirect("~/Views/Homepage.aspx");
+            
         }
         private void IsLogged()
         {
@@ -55,5 +57,7 @@ namespace Bookstore_Web.Views
                 lblUser.Visible = false;
             }
         }
+
+        
     }
 }

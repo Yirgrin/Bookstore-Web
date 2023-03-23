@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Bookstore_Web.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using c = Bookstore_Web.Controller;
@@ -13,10 +15,9 @@ namespace Bookstore_Web.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            IsLogged();
             if (!IsPostBack)
             {
-                IsLogged();
                 int Id = Convert.ToInt16(Request.QueryString["Id"]);
 
                 c.Books booksController = new c.Books();
@@ -44,15 +45,27 @@ namespace Bookstore_Web.Views
 
         protected void userEmail()
         {
+            string msg = string.Empty;
+            if (Session["loginInfo"] == null)
+            {
+                msg = $"alert('Necesitas tener una cuenta para añadir libros a favoritos')";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
+            }
+
+            m.LoginResponsePayload session = (m.LoginResponsePayload)Session["loginInfo"];
+            string email= session.email.ToString();
+
             List<m.Book> books = (List<m.Book>)Session["book"];
 
             m.Book book = new m.Book()
             {
                 Id = books[0].Id,
-                email = (m.LoginResponsePayload)Session["loginInfo"],
+                email = email,
             };
             Session["book"] = book;
+
         }
+
         protected void btnLogout_ServerClick(object sender, EventArgs e)
         {
             string msg = string.Empty;
@@ -62,7 +75,7 @@ namespace Bookstore_Web.Views
             Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
         }
 
-        protected void btnFavotite_ServerClick(object sender, EventArgs e)
+        protected void btnFavorite_ServerClick(object sender, EventArgs e)
         {
             string msg = string.Empty;
             if (Session["loginInfo"] == null)
@@ -71,7 +84,7 @@ namespace Bookstore_Web.Views
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
             }
 
-            useremail();
+            userEmail();
             m.Book book = (m.Book)Session["Book"];
 
             c.Books bookController = new c.Books();
@@ -79,13 +92,15 @@ namespace Bookstore_Web.Views
             if (bookController.SaveFavoriteBook(book))
             {
                 msg = $"alert('¡Libro añadido a tu lista de favoritos!')";
+                Page.ClientScript.RegisterStartupScript(this.GetType(),"Mensaje", msg , true);
             }
             else
             {
                 msg = $"alert('Ocurrió un error al añadir el libro a favoritos.')";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
             }
 
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showModal('Book','" + msg + "')", true);
+            
         }
     }
 }
