@@ -5,20 +5,6 @@ using System.IO;
 using System.Text;
 using System;
 
-using System;
-
-using System.Text;
-
-using ClassDato;
-using System.Data;
-
-using System.IO;
-
-
-using System.Drawing.Printing;
-using System.Drawing;
-using System.Windows.Forms;
-
 namespace Bookstore_Web.Controller
 {
     public class Ticket
