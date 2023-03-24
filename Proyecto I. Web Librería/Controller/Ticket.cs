@@ -19,11 +19,9 @@ using System.Drawing.Printing;
 using System.Drawing;
 using System.Windows.Forms;
 
-
-
-
-
-public class CreaTicket
+namespace Bookstore_Web.Controller
+{
+    public class Ticket
     {
         public static StringBuilder line = new StringBuilder();
         string ticket = "";
@@ -321,6 +319,4 @@ public class CreaTicket
 
 
     }
-
-
 }
