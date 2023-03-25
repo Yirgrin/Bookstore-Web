@@ -131,8 +131,8 @@
                                                     <i class="fa fa-star" aria-hidden="true"></i>
                                                 </div>
                                                 <div class="cart">
-                                                    <a href="ShoppingCart.aspx" data-toggle="tooltip" data-placement="left" title="Añadir al Carrito">
-                                                        <img src="../css/PageStyle/img/core-img/cart.png" /></a>
+                                                    <a dataid='<%# Eval("Id")%>' runat="server" onserverclick="btnDeleteFavorite_ServerClick" data-toggle="tooltip" data-placement="left" title="Eliminar libro de favoritos">
+                                                        <img src="../css/PageStyle/img/core-img/trash-2.jpg" /></a>
                                                 </div>
                                             </div>
                                         </div>

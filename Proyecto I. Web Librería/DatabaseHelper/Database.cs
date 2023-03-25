@@ -57,17 +57,27 @@ namespace Bookstore_Web.DatabaseHelper
             this.ExecuteQuery("[dbo].[spSaveFavoriteBook]", param);
         }
 
-        public DataTable GetFavoriteBooks(string email)
+        public DataTable GetFavoriteBooks(string Email)
         {
 
             List<SqlParameter> param = new List<SqlParameter>()
             {
-                new SqlParameter("@Email", email),
+                new SqlParameter("@Email", Email),
             };
 
             return this.Fill("[dbo].[spGetFavoriteBooks]", param);
         }
 
+        public void DeleteFavoriteBook(string Email, int bookId)
+        {
+            List<SqlParameter> param = new List<SqlParameter>()
+            {
+                new SqlParameter("@Email", Email),
+                new SqlParameter("@bookId", bookId),
+            };
+
+            this.ExecuteQuery("[dbo].[spDeleteFavoriteBook]", param);
+        }
 
         //Conexión a la BD Fill, devuelve datos
         //Conexión a la BD ExecuteNonQuery, elimina, inserta, mopdifica en la base de datos...

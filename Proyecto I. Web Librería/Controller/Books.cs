@@ -72,6 +72,22 @@ namespace Bookstore_Web.Controller
             return ConvertDSToList(ds);
         }
 
+        public bool DeleteFavoriteBook(string Email, int bookId)
+        {
+            try
+            {
+                DatabaseHelper.Database db = new DatabaseHelper.Database();
+
+                db.DeleteFavoriteBook(Email, bookId);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public List<m.Book> ConvertDSToList(DataTable ds)
         {
             List<m.Book> bookList = new List<m.Book>();

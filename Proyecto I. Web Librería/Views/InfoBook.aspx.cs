@@ -26,7 +26,6 @@ namespace Bookstore_Web.Views
                 repInfoBook.DataSource = book;
                 repInfoBook.DataBind();
             }
-
         }
 
         private void IsLogged()
@@ -51,19 +50,20 @@ namespace Bookstore_Web.Views
                 msg = $"alert('Necesitas tener una cuenta para añadir libros a favoritos')";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
             }
-
-            m.LoginResponsePayload session = (m.LoginResponsePayload)Session["loginInfo"];
-            string email= session.email.ToString();
-
-            List<m.Book> books = (List<m.Book>)Session["book"];
-
-            m.Book book = new m.Book()
+            else
             {
-                Id = books[0].Id,
-                email = email,
-            };
-            Session["book"] = book;
+                m.LoginResponsePayload session = (m.LoginResponsePayload)Session["loginInfo"];
+                string email = session.email.ToString();
 
+                List<m.Book> books = (List<m.Book>)Session["book"];
+
+                m.Book book = new m.Book()
+                {
+                    Id = books[0].Id,
+                    email = email,
+                };
+                Session["book"] = book;
+            }
         }
 
         protected void btnLogout_ServerClick(object sender, EventArgs e)
@@ -83,24 +83,26 @@ namespace Bookstore_Web.Views
                 msg = $"alert('Necesitas tener una cuenta para añadir libros a favoritos')";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
             }
-
-            userEmail();
-            m.Book book = (m.Book)Session["Book"];
-
-            c.Books bookController = new c.Books();
-
-            if (bookController.SaveFavoriteBook(book))
-            {
-                msg = $"alert('¡Libro añadido a tu lista de favoritos!')";
-                Page.ClientScript.RegisterStartupScript(this.GetType(),"Mensaje", msg , true);
-            }
             else
             {
-                msg = $"alert('Ocurrió un error al añadir el libro a favoritos.')";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
+                userEmail();
+                m.Book book = (m.Book)Session["Book"];
+
+                c.Books bookController = new c.Books();
+
+                if (bookController.SaveFavoriteBook(book))
+                {
+                    msg = $"alert('¡Libro añadido a tu lista de favoritos!')";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
+                }
+                else
+                {
+                    msg = $"alert('Ocurrió un error al añadir el libro a favoritos.')";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
+                }
+
             }
 
-            
         }
     }
 }

@@ -84,6 +84,7 @@
     <Content Include="css\PageStyle\img\core-img\logo.png" />
     <Content Include="css\PageStyle\img\core-img\paypal.png" />
     <Content Include="css\PageStyle\img\core-img\search.png" />
+    <Content Include="css\PageStyle\img\core-img\trash-2.jpg" />
     <Content Include="css\PageStyle\js\active.js" />
     <Content Include="css\PageStyle\js\bootstrap.min.js" />
     <Content Include="css\PageStyle\js\classy-nav.min.js" />
@@ -91,7 +92,9 @@
     <Content Include="css\PageStyle\js\map-active.js" />
     <Content Include="css\PageStyle\js\plugins.js" />
     <Content Include="css\PageStyle\js\popper.min.js" />
+    <Content Include="DatabaseHelper\StoreProcedures\spDeleteFavoriteBook.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetBooks.sql" />
+    <Content Include="DatabaseHelper\StoreProcedures\spGetFavoriteBooks.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetInfoBook.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetSearchedBook.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spSaveFavoriteBooks.sql" />
@@ -109,7 +112,6 @@
     <Compile Include="Controller\Books.cs" />
     <Compile Include="Controller\SingIn.cs" />
     <Compile Include="Controller\SingUp.cs" />
-    <Compile Include="Controller\Ticket.cs" />
     <Compile Include="DatabaseHelper\Database.cs" />
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\User.cs" />
