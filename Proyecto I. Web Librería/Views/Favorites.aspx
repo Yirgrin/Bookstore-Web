@@ -81,7 +81,7 @@
                     <a href="ShoppingCart.aspx" class="cart-nav">
                         <img src="../css/PageStyle/img/core-img/cart.png" />
                         Carrito <span>(0)</span></a>
-                    <a href="#" class="fav-nav">
+                    <a href="Favorites.aspx" class="fav-nav">
                         <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos</a>
                     <a href="Homepage.aspx" class="search-nav">
                         <img src="../css/PageStyle/img/core-img/search.png" />Buscar </a>
@@ -131,8 +131,8 @@
                                                     <i class="fa fa-star" aria-hidden="true"></i>
                                                 </div>
                                                 <div class="cart">
-                                                    <a dataid='<%# Eval("Id")%>' runat="server" onserverclick="btnDeleteFavorite_ServerClick" data-toggle="tooltip" data-placement="left" title="Eliminar libro de favoritos">
-                                                        <img src="../css/PageStyle/img/core-img/trash-2.jpg" /></a>
+                                                    <button dataid='<%# Eval("Id")%>' runat="server" onserverclick="btnDeleteFavorite_ServerClick" data-toggle="tooltip" data-placement="left" title="Eliminar libro de favoritos">
+                                                        <img src="../css/PageStyle/img/core-img/trash-2.jpg" /></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -142,9 +142,7 @@
                         </asp:Repeater>
                     </div>
                 </div>
-            </div>
-        </div>
-
+           
 
         <!-- ##### Footer Area Start ##### -->
         <footer class="footer_area clearfix">

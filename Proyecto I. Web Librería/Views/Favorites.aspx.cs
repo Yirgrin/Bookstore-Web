@@ -39,6 +39,7 @@ namespace Bookstore_Web.Views
 
         protected void btnDeleteFavorite_ServerClick(object sender, EventArgs e)
         {
+            string msg = string.Empty;
             var button = (HtmlButton)sender;
             Session["bookId"] = Convert.ToInt16(button.Attributes["dataId"]);
 
@@ -47,6 +48,8 @@ namespace Bookstore_Web.Views
 
             c.Books bookController = new c.Books();
             bookController.DeleteFavoriteBook(session.email, bookId);
+            msg = $"alert('Libro eliminado de favoritos.')";
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
             LoadFavoritePage();
         }
     }
