@@ -136,8 +136,8 @@ namespace Bookstore_Web.Controller
 
                 if (Articulo.Length > 40)                                 // **********
                 {
-                    //cort = max - 16;
-                    //parte1 = Articulo.Remove(16, cort);          // corta a 16 la descripcion del articulo
+                    cort = max - 16;
+                    parte1 = Articulo.Remove(16, cort);          // corta a 16 la descripcion del articulo
                     nroEspacios = (3 - cant.ToString().Length);
                     espacios = "";
                     for (int i = 0; i < nroEspacios; i++)
@@ -249,10 +249,10 @@ namespace Bookstore_Web.Controller
                     pd.PrintPage += new PrintPageEventHandler
                        (this.pd_PrintPage);
                     //  pd.PrinterSettings.PrinterName = "EPSON L3110 SERIES";// Nombre de la impresora
-                    //pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";// Nombre de la impresora
+                    pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";// Nombre de la impresora
                     pd.PrinterSettings.PrinterName = Impresora;// Nombre de la impresora
 
-                    // pd.DefaultPageSettings.PaperSize = new PaperSize("", 10, 800);
+                    pd.DefaultPageSettings.PaperSize = new PaperSize("", 10, 800);
                     pd.DocumentName = "Factura" + DateTime.Now.ToString();
 
                     pd.Print();
