@@ -42,7 +42,7 @@
                 <!-- Navbar Brand -->
                 <div class="amado-navbar-brand">
                     <a href="Homepage.aspx">
-                        <img src="../css/PageStyle/img/core-img/logo.png" />
+                         <img src="../css/PageStyle/img/core-img/logo.png" />
                     </a>
                 </div>
                 <!-- Navbar Toggler -->
@@ -195,7 +195,7 @@
                                         <li><span>total:</span> <span>$140.00</span></li>
                                     </ul>
                                     <div class="cart-btn mt-100">
-                                        <a href="Ticket.cs" class="btn amado-btn w-100">Checkout</a>
+                                        <a href="Factura.cs" class="btn amado-btn w-100">Checkout</a>
                                     </div>
                                 </div>
                             </div>
