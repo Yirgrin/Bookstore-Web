@@ -80,9 +80,9 @@
                 <div class="cart-fav-search mb-100">
                     <a href="ShoppingCart.aspx" class="cart-nav">
                         <img src="../css/PageStyle/img/core-img/cart.png" />
-                        Carrito <span>(0)</span></a>
+                         Carrito <span id="lblBooksCount" runat="server"></span></a>
                     <a href="Favorites.aspx" class="fav-nav">
-                        <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos</a>
+                        <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos <span id="lblfavoritesCount" runat="server"></span></a>
                     <a href="Homepage.aspx" class="search-nav">
                         <img src="../css/PageStyle/img/core-img/search.png" />Buscar </a>
                 </div>
@@ -131,7 +131,7 @@
                                                     <i class="fa fa-star" aria-hidden="true"></i>
                                                 </div>
                                                 <div class="cart">
-                                                    <button dataid='<%# Eval("Id")%>' runat="server" onserverclick="btnDeleteFavorite_ServerClick" data-toggle="tooltip" data-placement="left" title="Eliminar libro de favoritos">
+                                                    <button dataid='<%# Eval("Id")%>' runat="server" onserverclick="btnDeleteFavorite_ServerClick" data-toggle="tooltip" data-placement="left" title="Eliminar libro de favoritos" style="border: none;">
                                                         <img src="../css/PageStyle/img/core-img/trash-2.jpg" /></button>
                                                 </div>
                                             </div>

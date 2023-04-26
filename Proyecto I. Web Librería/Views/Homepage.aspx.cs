@@ -29,15 +29,35 @@ namespace Bookstore_Web
         private void IsLogged()
         {
             if (Session["loginInfo"] == null)
-            { 
-               btnLogout.Visible = false;
+            {
+                btnLogout.Visible = false;
                 lblUser.Visible = true;
 
             }
-            else 
+            else
             {
                 btnLogout.Visible = true;
                 lblUser.Visible = false;
+
+                m.LoginResponsePayload session = (m.LoginResponsePayload)Session["loginInfo"];
+                c.Books bookController = new c.Books();
+                List<m.Book> books = bookController.GetShoppingCart(session);
+                List<m.Book> favorites = bookController.GetFavoriteBooks(session);
+
+                int booksCount = 0;
+                int favoritesCount = 0;
+            
+                foreach (var item in books)
+                {
+                    booksCount += 1;
+                }
+                lblBooksCount.InnerText = booksCount.ToString();
+
+                foreach (var item in favorites)
+                {
+                    favoritesCount += 1;
+                }
+                lblfavoritesCount.InnerText = favoritesCount.ToString();
             }
         }
 

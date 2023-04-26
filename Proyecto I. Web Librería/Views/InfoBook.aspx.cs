@@ -34,11 +34,32 @@ namespace Bookstore_Web.Views
             {
                 btnLogout.Visible = false;
                 lblUser.Visible = true;
+
             }
             else
             {
                 btnLogout.Visible = true;
                 lblUser.Visible = false;
+
+                m.LoginResponsePayload session = (m.LoginResponsePayload)Session["loginInfo"];
+                c.Books bookController = new c.Books();
+                List<m.Book> books = bookController.GetShoppingCart(session);
+                List<m.Book> favorites = bookController.GetFavoriteBooks(session);
+
+                int booksCount = 0;
+                int favoritesCount = 0;
+
+                foreach (var item in books)
+                {
+                    booksCount += 1;
+                }
+                lblBooksCount.InnerText = booksCount.ToString();
+
+                foreach (var item in favorites)
+                {
+                    favoritesCount += 1;
+                }
+                lblfavoritesCount.InnerText = favoritesCount.ToString();
             }
         }
 
@@ -103,6 +124,34 @@ namespace Bookstore_Web.Views
 
             }
 
+        }
+
+        protected void btnCart_ServerClick(object sender, EventArgs e)
+        {
+            string msg = string.Empty;
+            if (Session["loginInfo"] == null)
+            {
+                msg = $"alert('Necesitas tener una cuenta para añadir libros al carrito de compras')";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
+            }
+            else
+            {
+                userEmail();
+                m.Book book = (m.Book)Session["Book"];
+
+                c.Books bookController = new c.Books();
+
+                if (bookController.SaveShoppingCart(book))
+                {
+                    msg = $"alert('¡Libro añadido a tu carrito de compras!')";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
+                }
+                else
+                {
+                    msg = $"alert('Ocurrió un error al añadir a tu carrito de compras.')";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Mensaje", msg, true);
+                }
+            }
         }
     }
 }

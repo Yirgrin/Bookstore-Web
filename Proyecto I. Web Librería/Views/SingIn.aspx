@@ -79,7 +79,7 @@
                 <div class="cart-fav-search mb-100">
                     <a href="ShoppingCart.aspx" class="cart-nav">
                         <img src="../css/PageStyle/img/core-img/cart.png" />
-                        Carrito <span>(0)</span></a>
+                        Carrito <span></span></a>
                     <a href="#" class="fav-nav">
                         <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos</a>
                     <a href="Homepage.aspx" class="search-nav">

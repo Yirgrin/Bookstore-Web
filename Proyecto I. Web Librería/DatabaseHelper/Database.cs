@@ -57,6 +57,17 @@ namespace Bookstore_Web.DatabaseHelper
             this.ExecuteQuery("[dbo].[spSaveFavoriteBook]", param);
         }
 
+        public void SaveShoppingCart(m.Book book)
+        {
+            List<SqlParameter> param = new List<SqlParameter>()
+            {
+                new SqlParameter("@bookId", book.Id),
+                new SqlParameter("@Email", book.email),
+            };
+
+            this.ExecuteQuery("[dbo].[spSaveShoppingCart]", param);
+        }
+
         public DataTable GetFavoriteBooks(string Email)
         {
 
@@ -89,6 +100,17 @@ namespace Bookstore_Web.DatabaseHelper
             };
 
             this.ExecuteQuery("[dbo].[spDeleteFavoriteBook]", param);
+        }
+
+        public void DeleteCartBook(string Email, int bookId)
+        {
+            List<SqlParameter> param = new List<SqlParameter>()
+            {
+                new SqlParameter("@Email", Email),
+                new SqlParameter("@bookId", bookId),
+            };
+
+            this.ExecuteQuery("[dbo].[spDeleteCartBook]", param);
         }
 
         //Conexión a la BD Fill, devuelve datos

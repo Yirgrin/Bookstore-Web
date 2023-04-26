@@ -80,9 +80,9 @@
                 <div class="cart-fav-search mb-100">
                     <a href="ShoppingCart.aspx" class="cart-nav">
                         <img src="../css/PageStyle/img/core-img/cart.png" />
-                        Carrito <span>(0)</span></a>
+                         Carrito <span id="lblBooksCount" runat="server"></span></a>
                     <a href="Favorites.aspx" class="fav-nav">
-                        <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos</a>
+                        <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos <span id="lblfavoritesCount" runat="server"></span></a>
                     <a href="Homepage.aspx" class="search-nav">
                         <img src="../css/PageStyle/img/core-img/search.png" />Buscar </a>
                 </div>
@@ -162,7 +162,7 @@
                                             </div>
 
                                             <!-- Add to Cart Form -->
-                                            <button href="#?Id=<%# Eval("Id")%>" id="btnCart" type="submit" class="btn amado-btn">Añadir al Carrito</button>
+                                            <button id="btnCart"  runat="server" onserverclick="btnCart_ServerClick" type="submit" class="btn amado-btn">Añadir al Carrito</button>
                                             <button id="btnFavorite" runat="server" onserverclick="btnFavorite_ServerClick" type="submit" class="btn amado-btn">Añadir a Favoritos</button>
                                         </div>
                                     </div>

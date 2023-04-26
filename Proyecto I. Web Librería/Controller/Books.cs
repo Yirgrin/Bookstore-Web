@@ -61,6 +61,22 @@ namespace Bookstore_Web.Controller
             }
         }
 
+        public bool SaveShoppingCart(m.Book book)
+        {
+            try
+            {
+                DatabaseHelper.Database db = new DatabaseHelper.Database();
+
+                db.SaveShoppingCart(book);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public List<m.Book> GetFavoriteBooks(LoginResponsePayload session)
         {
             List<m.Book> bookList = new List<m.Book>();
@@ -99,6 +115,21 @@ namespace Bookstore_Web.Controller
             }
         }
 
+        public bool DeleteCartBook(string Email, int bookId)
+        {
+            try
+            {
+                DatabaseHelper.Database db = new DatabaseHelper.Database();
+
+                db.DeleteCartBook(Email, bookId);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<m.Book> ConvertDSToList(DataTable ds)
         {
             List<m.Book> bookList = new List<m.Book>();

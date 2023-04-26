@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\Books.css" />
+    <Content Include="css\JS.js" />
     <Content Include="css\PageStyle\css\animate.css" />
     <Content Include="css\PageStyle\css\bootstrap.min.css" />
     <Content Include="css\PageStyle\css\classy-nav.min.css" />
@@ -99,8 +100,10 @@
     <Content Include="DatabaseHelper\StoreProcedures\spGetSearchedBook.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetShoppingCart.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spSaveFavoriteBooks.sql" />
+    <Content Include="DatabaseHelper\StoreProcedures\spSaveShoppingCart.sql" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
+    <Content Include="Views\ConfirmPurchase.aspx" />
     <Content Include="Views\Create Account.aspx" />
     <Content Include="Views\Favorites.aspx" />
     <Content Include="Views\Homepage.aspx" />
@@ -117,6 +120,13 @@
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\Purchase.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Views\ConfirmPurchase.aspx.cs">
+      <DependentUpon>ConfirmPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ConfirmPurchase.aspx.designer.cs">
+      <DependentUpon>ConfirmPurchase.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Create Account.aspx.cs">
       <DependentUpon>Create Account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

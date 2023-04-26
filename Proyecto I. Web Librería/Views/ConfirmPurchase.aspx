@@ -1,13 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Create Account.aspx.cs" Inherits="Bookstore_Web.Views.Create_Account" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConfirmPurchase.aspx.cs" Inherits="Bookstore_Web.Views.ConfirmPurchase" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="UTF-8" />
-    <meta name="description" content="" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title>Librería Internacional</title>
 
@@ -28,7 +25,7 @@
     <script src="../css/PageStyle/js/plugins.js"></script>
     <!-- Active js -->
     <script src="../css/PageStyle/js/active.js"></script>
-
+    <script src="../css/JS.js"></script>
 </head>
 
 <body>
@@ -73,16 +70,16 @@
 
                 <!-- Button Group -->
                 <div class="amado-btn-group mt-30 mb-100">
-                    <button class="btn btn-outline-warning" id="btnLogout" runat="server"> Cerrar Sesion</button>
+                    <button class="btn btn-outline-warning" id="btnLogout" runat="server" onserverclick="btnLogout_ServerClick">Cerrar Sesion</button>
                 </div>
 
                 <!-- Cart Menu -->
                 <div class="cart-fav-search mb-100">
                     <a href="ShoppingCart.aspx" class="cart-nav">
                         <img src="../css/PageStyle/img/core-img/cart.png" />
-                        Carrito <span></span></a>
-                    <a href="#" class="fav-nav">
-                        <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos</a>
+                        Carrito <span id="lblBooksCount" runat="server"></span></a>
+                    <a href="Favorites.aspx" class="fav-nav">
+                        <img src="../css/PageStyle/img/core-img/favorites.png" />Favoritos <span id="lblfavoritesCount" runat="server"></span></a>
                     <a href="Homepage.aspx" class="search-nav">
                         <img src="../css/PageStyle/img/core-img/search.png" />Buscar </a>
                 </div>
@@ -95,47 +92,98 @@
                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 </div>
             </header>
+
             <!-- Header Area End -->
 
             <div class="cart-table-area section-padding-100">
-                
-                    <div class="cart-title">
-                        <h2>Iniciar Sesión</h2>
+
+                <div class="cart-title">
+                    <h2>Tus Datos</h2>
+                    <p>Por favor, completa este formulario para completar tu compra.</p>
+                </div>
+
+                <div class="row" style="margin-top: 2em;">
+                    <div class="col-md-6 mb-3">
+                        <label for="first_name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="first_name" runat="server" />
                     </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="last_name" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="last_name" runat="server" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="inputCountry" class="form-label">País</label>
+                        <input type="text" class="form-control" id="inputCountry" runat="server" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="inputCity" class="form-label">Ciudad (Provincia)</label>
+                        <input type="text" class="form-control" id="inputCity" runat="server" />
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="textAddress" class="form-label">Dirección de envío</label>
+                        <textarea type="text" class="form-control" id="textAddress" runat="server" rows="3"> </textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="inputCardNumber" class="form-label">Número de tarjeta</label>
+                        <input type="number" class="form-control" id="inputCardNumber" runat="server" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="inputPostalCode" class="form-label">Código Postal</label>
+                        <input type="number" class="form-control" id="inputPostalCode" runat="server" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="inputExpDate" class="form-label">Fecha de expiración de la tarjeta</label>
+                        <input type="date" class="form-control" id="inputExpDate" runat="server" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="inputSecCode" class="form-label">Código de seguridad</label>
+                        <input type="number" class="form-control" id="inputSecCode" runat="server" />
+                    </div>
+                </div>
 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="first_name" value="" placeholder="Nombre" required />
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="last_name" value="" placeholder="Apellidos" required />
-                            </div>
-                            <div class="col-12 mb-3">
-                                <input type="email" class="form-control" runat="server" id="email" placeholder="Correo Electrónico" value="" required />
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="zipCode" placeholder="Identificación" value="" required />
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="password" class="form-control" runat="server" id="password" placeholder="Contraseña" value="" required />
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="custom-control custom-checkbox d-block mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2" />
-                                <label class="custom-control-label" for="customCheck2">Acepto los términos y condiciones</label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                        <div class="cart-btn mt-100">
-                            <a id="btnSingUp" runat="server" onserverclick="btnSingUp_ServerClick" class="btn amado-btn w-100">Registrarse</a>
-                        </div>
-                            </div>
-                
+                <div class="row">
+                    <div class="cart-btn mt-100">
+                        <a id="btnConfirm" runat="server" onserverclick="btnConfirm_ServerClick" class="btn amado-btn w-100">Confirmar Compra</a>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Modal Bill-->
+        <div class="modal" id="exampleModal" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Librería Internacional</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <h6 style="text-align: center;">Sucursal San José</h6>
+                        <br />
+                        <h6 id="lblClient" runat="server"></h6>
+                        <h6 id="lblName" runat="server"></h6>
+                        <br />
+                        <br />
+                        <h6 id="lblBooks" runat="server" style="text-align: center;  font-weight: bold;"></h6>
+                        <br />
+                        <br />
+                        <h6 id="lblTotal" runat="server" style="text-align: center;  font-weight: bold;"></h6>
+                        <br />
+                        <br />
+                        <h6 id="lblCard" runat="server"></h6>
+                        <h6 id="lblAddress" runat="server"></h6>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <!-- ##### Footer Area Start ##### -->
         <footer class="footer_area clearfix">
             <div class="container">
@@ -190,8 +238,8 @@
                     </div>
                 </div>
             </div>
-        </footer>
 
+        </footer>
     </form>
 </body>
 </html>
