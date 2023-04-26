@@ -68,6 +68,18 @@ namespace Bookstore_Web.DatabaseHelper
             return this.Fill("[dbo].[spGetFavoriteBooks]", param);
         }
 
+        public DataTable GetShoppingCart(string Email)
+        {
+
+            List<SqlParameter> param = new List<SqlParameter>()
+            {
+                new SqlParameter("@Email", Email),
+            };
+
+            return this.Fill("[dbo].[spGetShoppingCart]", param);
+        }
+
+
         public void DeleteFavoriteBook(string Email, int bookId)
         {
             List<SqlParameter> param = new List<SqlParameter>()

@@ -72,6 +72,17 @@ namespace Bookstore_Web.Controller
             return ConvertDSToList(ds);
         }
 
+        public List<m.Book> GetShoppingCart(LoginResponsePayload session)
+        {
+            List<m.Book> bookList = new List<m.Book>();
+
+            DatabaseHelper.Database db = new DatabaseHelper.Database();
+
+            DataTable ds = db.GetShoppingCart(session.email);
+
+            return ConvertDSToList(ds);
+        }
+
         public bool DeleteFavoriteBook(string Email, int bookId)
         {
             try

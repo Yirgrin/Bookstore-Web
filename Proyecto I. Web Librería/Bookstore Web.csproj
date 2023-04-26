@@ -99,7 +99,6 @@
     <Content Include="DatabaseHelper\StoreProcedures\spGetSearchedBook.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spGetShoppingCart.sql" />
     <Content Include="DatabaseHelper\StoreProcedures\spSaveFavoriteBooks.sql" />
-    <Content Include="DatabaseHelper\StoreProcedures\spSaveShoppingCart.sql" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Views\Create Account.aspx" />
@@ -114,10 +113,9 @@
     <Compile Include="Controller\Books.cs" />
     <Compile Include="Controller\SingIn.cs" />
     <Compile Include="Controller\SingUp.cs" />
-    <Compile Include="Controller\Factura.cs" />
     <Compile Include="DatabaseHelper\Database.cs" />
     <Compile Include="Model\Book.cs" />
-    <Compile Include="Model\Ticket.cs" />
+    <Compile Include="Model\Purchase.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Views\Create Account.aspx.cs">
       <DependentUpon>Create Account.aspx</DependentUpon>
